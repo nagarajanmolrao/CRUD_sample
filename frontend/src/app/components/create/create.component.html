@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <!-- Success Alert -->
+  <div *ngIf="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ successMessage }}
+    <button type="button" class="close" aria-label="Close" (click)="successMessage = ''">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <!-- Error Alert -->
+  <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{ errorMessage }}
+    <button type="button" class="close" aria-label="Close" (click)="errorMessage = ''">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <!-- Your Create Task Form -->
+  <form (ngSubmit)="createTask()">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" id="title" [(ngModel)]="newTask.title" name="title" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" [(ngModel)]="newTask.description" name="description" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+</div>

@@ -1,0 +1,8 @@
+.completed-task {
+    background-color: lightgreen; /* Set background color for completed tasks */
+  }
+  
+  .incomplete-task {
+    background-color: lightcoral; /* Set background color for incomplete tasks */
+  }
+  
